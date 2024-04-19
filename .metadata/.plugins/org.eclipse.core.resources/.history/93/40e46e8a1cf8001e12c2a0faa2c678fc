@@ -1,0 +1,31 @@
+package testNG;
+
+import java.io.FileInputStream;
+import java.time.Duration;
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.BeforeTest;
+
+import functionDriven.Genericmethods;
+
+public class TestNGMaster extends Genericmethods{
+	
+	public String expval, actval;
+	public FileInputStream fi;
+	public Properties pr;
+	
+	@BeforeTest
+	public void orgLaunch(){
+		String prPath = "D:\\RavaliRecordings\\Workspace\\SeleniumPractice\\src\\com\\SeleniumPractice\\properties\\OrgHRm.properties";
+		fi = new FileInputStream(prPath);
+		pr = new Properties();
+		pr.load(fi);
+		
+		expval = "LOGIN";
+		brLaunch(br);
+		driver.get(url);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(120));
+		actval = driver.findElement(By.id(pr.getProperty("login"))).getAttribute("value");
+	}
+}

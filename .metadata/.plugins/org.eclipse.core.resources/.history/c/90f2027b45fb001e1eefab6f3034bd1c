@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="OnFirefox">
+  <parameter name = "br" value = "firefox"/>
+  <parameter name = "pt" value = "Windows"/>
+    <classes>
+      <class name="grid.GridEg"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test thread-count="5" name="OnChrome">
+  <parameter name = "br" value = "chrome"/>
+  <parameter name = "pt" value = "Windows"/>
+    <classes>
+      <class name="grid.GridEg"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test thread-count="5" name="OnEdge">
+  <parameter name = "br" value = "MicrosoftEdge"/>
+  <parameter name = "pt" value = "Windows"/>
+    <classes>
+      <class name="grid.GridEg"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

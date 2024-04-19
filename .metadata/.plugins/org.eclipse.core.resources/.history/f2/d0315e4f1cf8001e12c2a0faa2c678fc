@@ -1,0 +1,11 @@
+package testNG;
+
+import org.testng.annotations.BeforeTest;
+
+public class TestNGMaster {
+
+	@BeforeTest
+	public void orgLaunch(){
+		
+	}
+}
